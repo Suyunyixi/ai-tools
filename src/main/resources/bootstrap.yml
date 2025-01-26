@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ai-tools
+server:
+  port: 8080
+
+# api key path
+key:
+  path:
+    deep-seek: /home/ai-tools/keys/deep-seek.txt
+## DeepSeek config
+deep-seek:
