@@ -31,7 +31,7 @@ public class ApiKeyProperties {
     /**
      * deep seek api key path
      */
-    private String deepSeek = "C:\\Users\\XuKai\\Desktop\\deep-seek.key";
+    private String deepSeek = "/home/ai-tools/keys/deep-seek.txt";
 
     private static final Map<ThirdParty, String> CACHE = MapUtil.newHashMap();
 
