@@ -29,7 +29,7 @@ public class DeepSeekController {
      * @return 返回接收到的数据
      */
     @PostMapping("/chat")
-    public TextChatResp chat(@Validated @RequestBody TextChatReq req) {
+    public TextChatResp chat(@RequestBody TextChatReq req) {
         return TextChatResp.of(textChatApplication.chat(req.getText()));
     }
 }
