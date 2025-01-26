@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
  **/
 @FeignClient(name = "deep-seek.client", url = "https://api.deepseek.com", configuration = DeepSeekInterceptor.class)
 public interface DeepSeekClient {
-
+    /**
+     * <h>exec 2 deep seek robot chat </h>
+     *
+     * @param req {@code }
+     * @return {@link String}
+     */
     @PostMapping("/chat/completions")
     String chat(@RequestBody DeepSeekChatReqDTO req);
 }
