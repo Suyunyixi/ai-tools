@@ -3,12 +3,10 @@ package fun.suyunyixi.aitools.facade;
 import fun.suyunyixi.aitools.application.TextChatApplication;
 import fun.suyunyixi.aitools.facade.req.TextChatReq;
 import fun.suyunyixi.aitools.facade.resp.TextChatResp;
+import fun.suyunyixi.aitools.infrastructure.enums.ThirdParty;
 import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * {@code DeepSeek api facade}
@@ -28,8 +26,8 @@ public class DeepSeekController {
      * @param req 文字对话请求体
      * @return 返回接收到的数据
      */
-    @PostMapping("/chat")
-    public TextChatResp chat(@RequestBody TextChatReq req) {
-        return TextChatResp.of(textChatApplication.chat(req.getText()));
+    @PostMapping("/chat/{type}")
+    public TextChatResp chat(@RequestBody TextChatReq req, @PathVariable String type) {
+        return TextChatResp.of(textChatApplication.chat(req.getText(), type));
     }
 }

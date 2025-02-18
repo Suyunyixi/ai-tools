@@ -32,12 +32,14 @@ public class ApiKeyProperties {
      * deep seek api key path
      */
     private String deepSeek = "/home/ai-tools/keys/deep-seek.txt";
+    private String selfDeepSeek = "/home/ai-tools/keys/deep-seek.txt";
 
     private static final Map<ThirdParty, String> CACHE = MapUtil.newHashMap();
 
     @PostConstruct
     public void init() {
         CACHE.put(ThirdParty.DeepSeek, readFile(deepSeek));
+        CACHE.put(ThirdParty.SelfDeepSeek, readFile(selfDeepSeek));
     }
 
     public String getKey(ThirdParty type) {

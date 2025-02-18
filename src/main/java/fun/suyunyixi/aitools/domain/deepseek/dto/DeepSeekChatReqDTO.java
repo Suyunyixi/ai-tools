@@ -31,7 +31,7 @@ public class DeepSeekChatReqDTO {
     public static DeepSeekChatReqDTO defaultSystem(String message) {
         DeepSeekChatReqDTO dto = new DeepSeekChatReqDTO();
         dto.setStream(false);
-        dto.setModel("deepseek-chat");
+        dto.setModel("deepseek-ai/DeepSeek-R1-Distill-Llama-70B");
         dto.setMessages(List.of(
                 new MessagesDTO("system", "You are a helpful assistant. And kinder than most"),
                 new MessagesDTO("user", message)

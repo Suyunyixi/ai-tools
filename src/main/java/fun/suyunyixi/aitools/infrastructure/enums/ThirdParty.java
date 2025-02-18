@@ -11,6 +11,7 @@ public enum ThirdParty {
      * deep seek
      */
     DeepSeek,
+    SelfDeepSeek,
     ;
 
 }
